@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import React, {  useState } from "react";
 
-const AddStudents = () => {
+const AddStudent = () => {
     const api_host = "http://localhost:8000/api/sample_tables"
     const navigate = useNavigate()
     const [enteredName, setName] = useState('')
@@ -34,7 +34,7 @@ const AddStudents = () => {
             })
             .then((response) => {
                 alert("Employee " + enteredName + " added!");
-                navigate("/read");
+                navigate("/Home");
             }).catch(error => {
                 alert("error===" + error);
             });
@@ -53,4 +53,4 @@ const AddStudents = () => {
         </form>
     </div>
 }
-export default AddStudents;
+export default AddStudent;
